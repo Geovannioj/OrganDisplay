@@ -61,6 +61,8 @@
 		D490EF2321EF858400F56630 /* organDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				D4DD3D0021F2211D00FFF244 /* ButtonScene */,
+				D4DD3CFF21F2210500FFF244 /* Protocols */,
 				D490EF3B21EFCF5200F56630 /* Rock_Big.scn */,
 				D490EF4721F04EE000F56630 /* Heart.scn */,
 				D490EF2421EF858400F56630 /* AppDelegate.swift */,
@@ -69,10 +71,24 @@
 				D490EF2B21EF858600F56630 /* Assets.xcassets */,
 				D490EF2D21EF858600F56630 /* LaunchScreen.storyboard */,
 				D490EF3021EF858600F56630 /* Info.plist */,
-				D490EF3621EFC8B600F56630 /* ButtonScene.swift */,
-				D4DD3CFD21F2139000FFF244 /* Protocol.swift */,
 			);
 			path = organDisplay;
+			sourceTree = "<group>";
+		};
+		D4DD3CFF21F2210500FFF244 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D4DD3CFD21F2139000FFF244 /* Protocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D4DD3D0021F2211D00FFF244 /* ButtonScene */ = {
+			isa = PBXGroup;
+			children = (
+				D490EF3621EFC8B600F56630 /* ButtonScene.swift */,
+			);
+			path = ButtonScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

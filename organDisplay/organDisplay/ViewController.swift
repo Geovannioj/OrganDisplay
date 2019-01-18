@@ -79,7 +79,6 @@ class ViewController: UIViewController {
   }
   
   fileprivate func rotateObject(node: SCNNode) {
-//      var rotateAction = SCNAction.rotate(by: CGFloat(360*(Double.pi/180)), around: SCNVector3(0,0,0), duration: 1)
     let rot = SCNAction.rotateTo(x: 90, y: 0, z: 0, duration: 2)
     let rep = SCNAction.repeatForever(rot)
     node.runAction(rep)
@@ -90,12 +89,12 @@ class ViewController: UIViewController {
 extension ViewController: ObjectRotation {
   
   func frontRotation() {
-    let rotation = SCNAction.rotateTo(x: 0, y: 0, z: -90, duration: 0)
+    let rotation = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 0)
     self.object3D!.runAction(rotation)
   }
   
   func backRotation() {
-    let rotation = SCNAction.rotateTo(x: 0, y: 0, z: 90, duration: 0)
+    let rotation = SCNAction.rotateTo(x: 0, y: 330, z: 0, duration: 0)
     self.object3D!.runAction(rotation)
   }
   
