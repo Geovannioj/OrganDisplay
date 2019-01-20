@@ -88,33 +88,35 @@ class ViewController: UIViewController {
 
 extension ViewController: ObjectRotation {
   
+  //1.5708 = 90 degrees in radians
   func frontRotation() {
-    let rotation = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 0)
+    let rotation = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func backRotation() {
-    let rotation = SCNAction.rotateTo(x: 0, y: 330, z: 0, duration: 0)
+    //330
+    let rotation = SCNAction.rotateTo(x: 0, y: 3.14159, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func leftRotation() {
-    let rotation = SCNAction.rotateTo(x: 0, y: 90, z: 0, duration: 0)
+    let rotation = SCNAction.rotateTo(x: 0, y: 1.5708, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func rightRotation() {
-    let rotation = SCNAction.rotateTo(x: 0, y: -90, z: 0, duration: 0)
+    let rotation = SCNAction.rotateTo(x: 0, y: -1.5708, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func upRotation() {
-    let rotation = SCNAction.rotateTo(x: 90, y: 0, z: 0, duration: 0)
+    let rotation = SCNAction.rotateTo(x: 1.5708, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func downRotation() {
-    let rotation = SCNAction.rotateTo(x: -90, y: 0, z: 0, duration: 0)
+    let rotation = SCNAction.rotateTo(x: -1.5708, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
