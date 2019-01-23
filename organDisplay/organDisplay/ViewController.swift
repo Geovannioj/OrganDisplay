@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     let lightNode = SCNNode()
     lightNode.light = SCNLight()
     lightNode.light?.type = .ambient
-    lightNode.light?.intensity = 0.1
+    lightNode.light?.intensity = 0.9
     lightNode.position = SCNVector3(0, 1000, 2)
     self.objectScene?.rootNode.addChildNode(lightNode)
   
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
   fileprivate func addCamera(scene: SCNScene) {
     self.cameraNode = SCNNode()
     cameraNode!.camera = SCNCamera()
-    cameraNode!.position = SCNVector3(0, 0, 5)
+    cameraNode!.position = SCNVector3(0, 0, 10)
     scene.rootNode.addChildNode(cameraNode!)
   }
   
@@ -67,13 +67,14 @@ class ViewController: UIViewController {
   
   fileprivate func addObject() {
     
-    guard let scene = SCNScene(named: "Rock_Big.scn") else { fatalError("Could not find Rocks scene!")}
-    guard let rock = scene.rootNode.childNode(withName: "Heart", recursively: true) else { fatalError("Could not find rock node")}
+    guard let scene = SCNScene(named: self.sceneName) else { fatalError("Could not find Rocks scene!")}
+    guard let rock = scene.rootNode.childNode(withName: "Cube", recursively: true) else { fatalError("Could not find rock node")}
     
     object3D = SCNNode(geometry: rock.geometry)
-    object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "heartTxt")
-    object3D?.geometry?.firstMaterial?.normal.contents = UIImage(named: "heartNormal")
-    object3D?.scale = SCNVector3(10, 10, 10)
+    object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "organTxt")
+    object3D?.pivot = SCNMatrix4MakeTranslation(0.5,0.5,0.5)
+//    object3D?.geometry?.firstMaterial?.normal.contents = UIImage(named: "heartNormal")
+//    object3D?.scale = SCNVector3(10, 10, 10)
     self.objectScene?.rootNode.addChildNode(object3D!)
     
   }

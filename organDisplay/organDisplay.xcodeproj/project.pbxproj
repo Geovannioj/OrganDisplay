@@ -27,7 +27,8 @@
 		D490EF3021EF858600F56630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D490EF3621EFC8B600F56630 /* ButtonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonScene.swift; sourceTree = "<group>"; };
 		D490EF3B21EFCF5200F56630 /* Rock_Big.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Rock_Big.scn; sourceTree = "<group>"; };
-		D490EF4721F04EE000F56630 /* Heart.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Heart.scn; sourceTree = "<group>"; };
+		D49371D821F8B64B00DC6E5F /* HeartModified.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = HeartModified.scn; sourceTree = "<group>"; };
+		D49371E721F8CE2B00DC6E5F /* organ.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = organ.scn; sourceTree = "<group>"; };
 		D4DD3CFD21F2139000FFF244 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +65,8 @@
 				D4DD3D0021F2211D00FFF244 /* ButtonScene */,
 				D4DD3CFF21F2210500FFF244 /* Protocols */,
 				D490EF3B21EFCF5200F56630 /* Rock_Big.scn */,
-				D490EF4721F04EE000F56630 /* Heart.scn */,
+				D49371D821F8B64B00DC6E5F /* HeartModified.scn */,
+				D49371E721F8CE2B00DC6E5F /* organ.scn */,
 				D490EF2421EF858400F56630 /* AppDelegate.swift */,
 				D490EF2621EF858400F56630 /* ViewController.swift */,
 				D490EF2821EF858400F56630 /* Main.storyboard */,
