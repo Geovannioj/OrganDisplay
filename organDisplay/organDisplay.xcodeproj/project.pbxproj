@@ -10,10 +10,10 @@
 		D490EF2521EF858400F56630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D490EF2421EF858400F56630 /* AppDelegate.swift */; };
 		D490EF2721EF858400F56630 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D490EF2621EF858400F56630 /* ViewController.swift */; };
 		D490EF2A21EF858400F56630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D490EF2821EF858400F56630 /* Main.storyboard */; };
-		D490EF2C21EF858600F56630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D490EF2B21EF858600F56630 /* Assets.xcassets */; };
 		D490EF2F21EF858600F56630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D490EF2D21EF858600F56630 /* LaunchScreen.storyboard */; };
 		D490EF3721EFC8B600F56630 /* ButtonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D490EF3621EFC8B600F56630 /* ButtonScene.swift */; };
 		D490EF3C21EFCF5200F56630 /* Rock_Big.scn in Resources */ = {isa = PBXBuildFile; fileRef = D490EF3B21EFCF5200F56630 /* Rock_Big.scn */; };
+		D4C2328E2204E7640034C7A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C2328D2204E7640034C7A8 /* Assets.xcassets */; };
 		D4DD3CFE21F2139000FFF244 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD3CFD21F2139000FFF244 /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +22,6 @@
 		D490EF2421EF858400F56630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D490EF2621EF858400F56630 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D490EF2921EF858400F56630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D490EF2B21EF858600F56630 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D490EF2E21EF858600F56630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D490EF3021EF858600F56630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D490EF3621EFC8B600F56630 /* ButtonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonScene.swift; sourceTree = "<group>"; };
@@ -30,6 +29,8 @@
 		D49371D821F8B64B00DC6E5F /* HeartModified.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = HeartModified.scn; sourceTree = "<group>"; };
 		D49371E721F8CE2B00DC6E5F /* organ.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = organ.scn; sourceTree = "<group>"; };
 		D4BEA33E2204793C00EE8713 /* secondOrgan.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = secondOrgan.scn; sourceTree = "<group>"; };
+		D4BEA3412204DFB900EE8713 /* untitled.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = untitled.scn; sourceTree = "<group>"; };
+		D4C2328D2204E7640034C7A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = organDisplay/Assets.xcassets; sourceTree = "<group>"; };
 		D4DD3CFD21F2139000FFF244 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +48,7 @@
 		D490EF1821EF858400F56630 = {
 			isa = PBXGroup;
 			children = (
+				D4C2328D2204E7640034C7A8 /* Assets.xcassets */,
 				D490EF2321EF858400F56630 /* organDisplay */,
 				D490EF2221EF858400F56630 /* Products */,
 			);
@@ -63,6 +65,7 @@
 		D490EF2321EF858400F56630 /* organDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				D4BEA3412204DFB900EE8713 /* untitled.scn */,
 				D4DD3D0021F2211D00FFF244 /* ButtonScene */,
 				D4DD3CFF21F2210500FFF244 /* Protocols */,
 				D490EF3B21EFCF5200F56630 /* Rock_Big.scn */,
@@ -72,7 +75,6 @@
 				D490EF2421EF858400F56630 /* AppDelegate.swift */,
 				D490EF2621EF858400F56630 /* ViewController.swift */,
 				D490EF2821EF858400F56630 /* Main.storyboard */,
-				D490EF2B21EF858600F56630 /* Assets.xcassets */,
 				D490EF2D21EF858600F56630 /* LaunchScreen.storyboard */,
 				D490EF3021EF858600F56630 /* Info.plist */,
 			);
@@ -154,8 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D490EF2F21EF858600F56630 /* LaunchScreen.storyboard in Resources */,
-				D490EF2C21EF858600F56630 /* Assets.xcassets in Resources */,
 				D490EF3C21EFCF5200F56630 /* Rock_Big.scn in Resources */,
+				D4C2328E2204E7640034C7A8 /* Assets.xcassets in Resources */,
 				D490EF2A21EF858400F56630 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

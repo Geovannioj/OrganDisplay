@@ -67,19 +67,19 @@ class ButtonScene: SKScene {
     self.downRotateBtn?.position = CGPoint(x: size.width/1.1, y: size.height/10)
     self.addChild(self.downRotateBtn!)
     
-    self.normalTextureBtn = SKSpriteNode(imageNamed: "ANT")
+    self.normalTextureBtn = SKSpriteNode(imageNamed: "Normal")
     self.normalTextureBtn?.name = "normalTextureBtn"
     self.normalTextureBtn?.position = CGPoint(x: size.width/10, y: size.height/1.1)
     self.addChild(normalTextureBtn!)
     
-    self.contrastTextureBtn = SKSpriteNode(imageNamed: "POST")
+    self.contrastTextureBtn = SKSpriteNode(imageNamed: "UV")
     self.contrastTextureBtn?.name = "contastTextureBtn"
     self.contrastTextureBtn?.position = CGPoint(x: size.width/3.9, y: size.height/1.1)
     self.addChild(contrastTextureBtn!)
     
-    self.rotateModeBtn = SKSpriteNode(imageNamed: "LAT")
+    self.rotateModeBtn = SKSpriteNode(imageNamed: "Rotation")
     self.rotateModeBtn?.name = "rotateModeBtn"
-    self.rotateModeBtn?.position = CGPoint(x: size.width/1.1, y: size.height/1.1)
+    self.rotateModeBtn?.position = CGPoint(x: size.width/1.1, y: size.height/1.4)
     self.addChild(rotateModeBtn!)
   }
   

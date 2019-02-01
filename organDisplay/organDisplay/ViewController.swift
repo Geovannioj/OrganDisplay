@@ -18,7 +18,7 @@ class ViewController: UIViewController {
   private var scnView: SCNView?
   private var buttonScene: ButtonScene?
   private var object3D: SCNNode?
-  private var cubeFace: SCNBox?
+  private var cubeFace: SCNNode?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,6 +30,9 @@ class ViewController: UIViewController {
     addCamera(scene: self.objectScene!)
     addObject()
     setUpButtons()
+    setUpCubeFace(myScnView: self.scnView!)
+    
+    
   }
 
   fileprivate func setupView() {
@@ -73,26 +76,32 @@ class ViewController: UIViewController {
     
     object3D = SCNNode(geometry: rock.geometry)
     object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "organTxt")
-    object3D?.pivot = SCNMatrix4MakeTranslation(0.5,0.5,0.5)
-//    object3D?.geometry?.firstMaterial?.normal.contents = UIImage(named: "heartNormal")
-//    object3D?.scale = SCNVector3(10, 10, 10)
     self.objectScene?.rootNode.addChildNode(object3D!)
     
   }
   
-  fileprivate func setUpCubeFace() {
+  fileprivate func setUpCubeFace(myScnView: SCNView) {
+    guard let scene = SCNScene(named: self.sceneName) else { fatalError("Could not find Rocks scene!")}
+    guard let rock = scene.rootNode.childNode(withName: "Cube3", recursively: true) else { fatalError("Could not find rock node")}
     
-    
+    self.cubeFace = SCNNode(geometry: rock.geometry)
+    self.cubeFace?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Group")
+    cubeFace?.scale = SCNVector3(0.5, 0.5, 0.5)
+    cubeFace!.position = SCNVector3(2.5 , 4.5, 0)
+    self.objectScene?.rootNode.addChildNode(cubeFace!)
   }
   
   fileprivate func rotateObject(node: SCNNode) {
     let rot = SCNAction.rotateBy(x: 0, y: 1.5708, z: 0, duration: 2)
     let rep = SCNAction.repeatForever(rot)
     node.runAction(rep, forKey: "rotateForever")
+    //cube
+    self.cubeFace?.runAction(rep, forKey: "rotateCube")
   }
   
   fileprivate func stopRotateAction(node:SCNNode) {
     node.removeAction(forKey: "rotateForever")
+    self.cubeFace?.removeAction(forKey: "rotateCube")
   }
 }
 
@@ -103,50 +112,55 @@ extension ViewController: ObjectRotation {
     stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
+    self.cubeFace?.runAction(rotation)
   }
   
   func backRotation() {
-    //330
+    
     stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 0, y: 3.14159, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
+    self.cubeFace?.runAction(rotation)
   }
   
   func leftRotation() {
     stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 0, y: 1.5708, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
+    self.cubeFace?.runAction(rotation)
   }
   
   func rightRotation() {
     stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 0, y: -1.5708, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
+    self.cubeFace?.runAction(rotation)
   }
   
   func upRotation() {
     stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 1.5708, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
+    self.cubeFace?.runAction(rotation)
   }
   
   func downRotation() {
     stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: -1.5708, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
+    self.cubeFace?.runAction(rotation)
   }
   
   func changeToContrastTxt() {
-    stopRotateAction(node: object3D!)
+
     self.object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "organTxt")
   }
   func changeToNormalTxt() {
-    stopRotateAction(node: object3D!)
+
     self.object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "organNormal")
   }
   
   func rotateForever() {
-    stopRotateAction(node: object3D!)
     self.rotateObject(node: self.object3D!)
   }
 }
