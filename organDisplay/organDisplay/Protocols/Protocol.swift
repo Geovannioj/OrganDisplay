@@ -16,4 +16,7 @@ protocol ObjectRotation {
   func rightRotation()
   func upRotation()
   func downRotation()
+  func changeToContrastTxt()
+  func changeToNormalTxt()
+  func rotateForever()
 }

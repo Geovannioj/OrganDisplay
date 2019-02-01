@@ -18,6 +18,7 @@ class ViewController: UIViewController {
   private var scnView: SCNView?
   private var buttonScene: ButtonScene?
   private var object3D: SCNNode?
+  private var cubeFace: SCNBox?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
   }
   
   fileprivate func setupScene(name: String) {
-    self.objectScene = SCNScene()//SCNScene(named: name)
+    self.objectScene = SCNScene()
     self.scnView?.scene = self.objectScene
   }
   
@@ -79,48 +80,74 @@ class ViewController: UIViewController {
     
   }
   
-  fileprivate func rotateObject(node: SCNNode) {
-    let rot = SCNAction.rotateTo(x: 90, y: 0, z: 0, duration: 2)
-    let rep = SCNAction.repeatForever(rot)
-    node.runAction(rep)
+  fileprivate func setUpCubeFace() {
+    
+    
   }
   
+  fileprivate func rotateObject(node: SCNNode) {
+    let rot = SCNAction.rotateBy(x: 0, y: 1.5708, z: 0, duration: 2)
+    let rep = SCNAction.repeatForever(rot)
+    node.runAction(rep, forKey: "rotateForever")
+  }
+  
+  fileprivate func stopRotateAction(node:SCNNode) {
+    node.removeAction(forKey: "rotateForever")
+  }
 }
 
 extension ViewController: ObjectRotation {
   
   //1.5708 = 90 degrees in radians
   func frontRotation() {
+    stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func backRotation() {
     //330
+    stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 0, y: 3.14159, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func leftRotation() {
+    stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 0, y: 1.5708, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func rightRotation() {
+    stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 0, y: -1.5708, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func upRotation() {
+    stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: 1.5708, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
   func downRotation() {
+    stopRotateAction(node: object3D!)
     let rotation = SCNAction.rotateTo(x: -1.5708, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
   }
   
+  func changeToContrastTxt() {
+    stopRotateAction(node: object3D!)
+    self.object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "organTxt")
+  }
+  func changeToNormalTxt() {
+    stopRotateAction(node: object3D!)
+    self.object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "organNormal")
+  }
   
+  func rotateForever() {
+    stopRotateAction(node: object3D!)
+    self.rotateObject(node: self.object3D!)
+  }
 }
 

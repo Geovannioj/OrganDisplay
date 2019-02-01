@@ -29,6 +29,7 @@
 		D490EF3B21EFCF5200F56630 /* Rock_Big.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Rock_Big.scn; sourceTree = "<group>"; };
 		D49371D821F8B64B00DC6E5F /* HeartModified.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = HeartModified.scn; sourceTree = "<group>"; };
 		D49371E721F8CE2B00DC6E5F /* organ.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = organ.scn; sourceTree = "<group>"; };
+		D4BEA33E2204793C00EE8713 /* secondOrgan.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = secondOrgan.scn; sourceTree = "<group>"; };
 		D4DD3CFD21F2139000FFF244 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +67,7 @@
 				D4DD3CFF21F2210500FFF244 /* Protocols */,
 				D490EF3B21EFCF5200F56630 /* Rock_Big.scn */,
 				D49371D821F8B64B00DC6E5F /* HeartModified.scn */,
+				D4BEA33E2204793C00EE8713 /* secondOrgan.scn */,
 				D49371E721F8CE2B00DC6E5F /* organ.scn */,
 				D490EF2421EF858400F56630 /* AppDelegate.swift */,
 				D490EF2621EF858400F56630 /* ViewController.swift */,

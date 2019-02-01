@@ -12,14 +12,18 @@ import SceneKit
 
 class ButtonScene: SKScene {
   
+  //Buttons
   var frontRotateBtn: SKSpriteNode?
   var backRotateBtn: SKSpriteNode?
   var leftRotateBtn: SKSpriteNode?
   var rightRotateBtn: SKSpriteNode?
   var upRotateBtn: SKSpriteNode?
   var downRotateBtn: SKSpriteNode?
-
+  var normalTextureBtn: SKSpriteNode?
+  var contrastTextureBtn: SKSpriteNode?
+  var rotateModeBtn: SKSpriteNode?
   
+  //Delegate
   var rotationDelegate: ObjectRotation?
   
   override init(size: CGSize) {
@@ -32,7 +36,7 @@ class ButtonScene: SKScene {
   }
   
   private func initRotBtn(size: CGSize) {
-//    self.frontRotateBtn = SKShapeNode(rectOf: CGSize(width: 50, height: 50))
+
     self.frontRotateBtn = SKSpriteNode(imageNamed: "ANT")
     self.frontRotateBtn?.name = "frontRotateBtn"
     self.frontRotateBtn?.position = CGPoint(x: size.width/10, y: size.height/10)
@@ -63,6 +67,20 @@ class ButtonScene: SKScene {
     self.downRotateBtn?.position = CGPoint(x: size.width/1.1, y: size.height/10)
     self.addChild(self.downRotateBtn!)
     
+    self.normalTextureBtn = SKSpriteNode(imageNamed: "ANT")
+    self.normalTextureBtn?.name = "normalTextureBtn"
+    self.normalTextureBtn?.position = CGPoint(x: size.width/10, y: size.height/1.1)
+    self.addChild(normalTextureBtn!)
+    
+    self.contrastTextureBtn = SKSpriteNode(imageNamed: "POST")
+    self.contrastTextureBtn?.name = "contastTextureBtn"
+    self.contrastTextureBtn?.position = CGPoint(x: size.width/3.9, y: size.height/1.1)
+    self.addChild(contrastTextureBtn!)
+    
+    self.rotateModeBtn = SKSpriteNode(imageNamed: "LAT")
+    self.rotateModeBtn?.name = "rotateModeBtn"
+    self.rotateModeBtn?.position = CGPoint(x: size.width/1.1, y: size.height/1.1)
+    self.addChild(rotateModeBtn!)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -79,6 +97,12 @@ class ButtonScene: SKScene {
       rotationDelegate?.upRotation()
     } else if (downRotateBtn?.contains((touches.first?.location(in: self))!))! {
       rotationDelegate?.downRotation()
+    } else if ((contrastTextureBtn?.contains((touches.first?.location(in: self))!))!) {
+      rotationDelegate?.changeToContrastTxt()
+    } else if((normalTextureBtn?.contains((touches.first?.location(in: self))!))!) {
+      rotationDelegate?.changeToNormalTxt()
+    } else if((rotateModeBtn?.contains((touches.first?.location(in: self))!))!) {
+      rotationDelegate?.rotateForever()
     }
   }
   
