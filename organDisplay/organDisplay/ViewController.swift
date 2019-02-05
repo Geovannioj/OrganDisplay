@@ -8,6 +8,7 @@
 
 import UIKit
 import SceneKit
+import AudioToolbox
 
 class ViewController: UIViewController {
 
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
     
     self.cubeFace = SCNNode(geometry: rock.geometry)
     self.cubeFace?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Group")
-    cubeFace?.scale = SCNVector3(0.5, 0.5, 0.5)
+    cubeFace?.scale = SCNVector3(0.25, 0.25, 0.25)
     cubeFace!.position = SCNVector3(2.5 , 4.5, 0)
     self.objectScene?.rootNode.addChildNode(cubeFace!)
   }
@@ -103,6 +104,10 @@ class ViewController: UIViewController {
     node.removeAction(forKey: "rotateForever")
     self.cubeFace?.removeAction(forKey: "rotateCube")
   }
+  
+  fileprivate func activateVibration() {
+    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+  }
 }
 
 extension ViewController: ObjectRotation {
@@ -113,6 +118,8 @@ extension ViewController: ObjectRotation {
     let rotation = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
     self.cubeFace?.runAction(rotation)
+    self.activateVibration()
+    
   }
   
   func backRotation() {
@@ -121,6 +128,7 @@ extension ViewController: ObjectRotation {
     let rotation = SCNAction.rotateTo(x: 0, y: 3.14159, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
     self.cubeFace?.runAction(rotation)
+    self.activateVibration()
   }
   
   func leftRotation() {
@@ -128,6 +136,7 @@ extension ViewController: ObjectRotation {
     let rotation = SCNAction.rotateTo(x: 0, y: 1.5708, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
     self.cubeFace?.runAction(rotation)
+    self.activateVibration()
   }
   
   func rightRotation() {
@@ -135,6 +144,7 @@ extension ViewController: ObjectRotation {
     let rotation = SCNAction.rotateTo(x: 0, y: -1.5708, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
     self.cubeFace?.runAction(rotation)
+    self.activateVibration()
   }
   
   func upRotation() {
@@ -142,6 +152,7 @@ extension ViewController: ObjectRotation {
     let rotation = SCNAction.rotateTo(x: 1.5708, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
     self.cubeFace?.runAction(rotation)
+    self.activateVibration()
   }
   
   func downRotation() {
@@ -149,19 +160,23 @@ extension ViewController: ObjectRotation {
     let rotation = SCNAction.rotateTo(x: -1.5708, y: 0, z: 0, duration: 1)
     self.object3D!.runAction(rotation)
     self.cubeFace?.runAction(rotation)
+    self.activateVibration()
   }
   
   func changeToContrastTxt() {
 
     self.object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "organTxt")
+    self.activateVibration()
   }
   func changeToNormalTxt() {
 
     self.object3D?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "organNormal")
+    self.activateVibration()
   }
   
   func rotateForever() {
     self.rotateObject(node: self.object3D!)
+    self.activateVibration()
   }
 }
 
